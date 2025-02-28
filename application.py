@@ -280,7 +280,7 @@ if selected == "홈":
                 # 세션 스테이트에 검색어 저장하고 검색 페이지로 이동
                 st.session_state.search_name = quick_search
                 st.session_state.page = "지원자 검색"
-                st.experimental_rerun()
+                st.rerun()
 
 # 전체 지원자 보기
 elif selected == "전체 지원자 보기":
@@ -622,5 +622,5 @@ elif selected == "지원자 검색":
             # 최근 검색어 버튼 스타일링
             for recent in st.session_state.recent_searches:
                 if st.button(recent, key=f"recent_{recent}"):
-                    st.session_state.search_name = recent
-                    st.experimental_rerun()
+                    st.session_state.search_name = recent   
+                    st.rerun()
